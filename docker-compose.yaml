@@ -1,0 +1,14 @@
+version: '3'
+services:
+
+  opensyslog: # Docker container name
+    build:
+      context: /home/home/opensyslog # Folder name where you have cloned files
+      dockerfile: dockerfile # Docker build file, no change needed, must be under above listed folder
+    image: opensyslog
+    container_name: opensyslog # Docker container name
+    network_mode: "host"
+    volumes:
+      - /home/home/opensyslog:/config # Folder name where you have config file
+      - /etc/localtime:/etc/localtime:ro # Time sync to host machine
+    restart: unless-stopped  # Restart policy

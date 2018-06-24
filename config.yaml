@@ -1,0 +1,9 @@
+syslog: # SYSLOG details
+    ip: 192.168.1.1 # IP address of the device you going to run this application
+    port: 514 # Port number of the above IP address
+    logs:
+      level: info # debug, info(default), warning, error, critical
+      syslog_log: open_syslog # without extension, log extension will be added automatically
+      monitor_log: open_app # without extension, log extension will be added automatically
+      prepend_timestamp: true # prepend time stamp before each syslog line
+      append_new_line: true # append new line character at the end of each syslog line
